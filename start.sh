@@ -22,4 +22,4 @@ fi
 $VIRTUALENV/bin/pip install -r requirements.txt
 
 # Run your glorious application
-$VIRTUALENV/bin/python3 Купи слона.py
+$VIRTUALENV/bin/python3 Купи_слона.py
