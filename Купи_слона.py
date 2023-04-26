@@ -34,10 +34,11 @@ def handle_dialog(req, res):
         return
     else:
         if req["request"]["type"] == "SimpleUtterance":
-            if req['request']['command'] in Agree:
-                res['response']['text'] = 'ПРОДАНО!!!'
-            else:
-                res['response']['text'] = f'Все говорят {req["request"]["command"]}, а ты купи слона!'
+            for agree in Agree:
+                if agree in req['request']['command']:
+                    res['response']['text'] = 'ПРОДАНО!!!'
+                else:
+                    res['response']['text'] = f'Все говорят {req["request"]["command"]}, а ты купи слона!'
         elif req["request"]["type"] == "ButtonPressed":
             res['response']['text'] = f'Все говорят {req["request"]["payload"]["text"]}, а ты купи слона!'
         else:
